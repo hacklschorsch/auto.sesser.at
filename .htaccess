@@ -9,9 +9,9 @@
 		RewriteRule "^(.*)\.(css|js|html)" "$1\.$2\.gz" [QSA]
 
 		# Serve correct content types, and prevent mod_deflate double gzip.
-		RewriteRule "\.css\.gz$"  "-" [T=text/css,E=no-gzip:1,E=no-brotli:1]
-		RewriteRule "\.js\.gz$"   "-" [T=text/javascript,E=no-gzip:1,E=no-brotli:1]
-		RewriteRule "\.html\.gz$" "-" [T=text/html,E=no-gzip:1,E=no-brotli:1]
+		RewriteRule "\.css\.gz$"  "-" [T=text/css,E=no-gzip:1,E=no-brotli]
+		RewriteRule "\.js\.gz$"   "-" [T=text/javascript,E=no-gzip:1,E=no-brotli]
+		RewriteRule "\.html\.gz$" "-" [T=text/html,E=no-gzip:1,E=no-brotli]
 
 		<FilesMatch "(\.js\.gz|\.css\.gz|\.html\.gz)$">
 			# Serve correct encoding type.
