@@ -12,7 +12,6 @@
 function exception_handler($exception) {
 	http_response_code(500);
 	echo "Exception: " , $exception->getMessage(), "\n";
-	flock($fp, LOCK_UN); // release the lock
 }
 set_exception_handler('exception_handler');
 
